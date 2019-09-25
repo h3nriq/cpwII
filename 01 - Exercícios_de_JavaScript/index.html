@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CPW II</title>
+</head>
+<body>
+    <h1>Exercícios de JavaScript</h1>
+
+    <h3>A) Ao clicar em um botão exiba em um alerta quantidade de caracteres contidos em um campo de texto</h3>
+    <p>Dica, utilize os comandos abaixo para pegar o valor de um campo de texto:</p>
+
+    <p>var textField = document.getElementById("idCampoTexto");</p>
+    <p>alert(textField.value);</p>
+
+    <input type="text" placeholder="digite algo..." id="idCampoTexto">
+    <button onClick="exibealerta()">Total de caracteres...</button>
+    
+    <script src="script.js"></script>
+    
+    <hr>
+
+    <h3>B) Desenvolva um programa em JavaScript que some números fornecidos pelo usuário em um campo de texto até que o número lido seja igual a zero</h3>
+    <input type="text" id="idSoma">
+    <button onClick="somaNumero()">Somar</button>
+    
+    <hr>
+
+    <h3>C) Utilizando como dados de entrada a altura e o gênero (‘M’ masculino e ‘F’ feminino), construa um algoritmo que calcule o peso ideal de uma pessoa, 
+        utilizando as seguintes fórmulas:</h3>
+    <p>homens: (72.7 * altura) - 58</p>
+    <p>mulheres: (62.1* altura) - 44.7</p>
+    
+    <input type="text" id="altura" placeholder="digite sua altura..."><br>
+    <form>
+        <input type="radio" name="genero" id="h" value="0"> Homem
+        <br>
+        <input type="radio" name="genero" id="m" value="1000"> Mulher
+        <br>
+    </form>
+    <button onclick="pesoNormativo()">Peso normativo</button>
+    
+    <hr>
+
+    <h3>D) Implemente o seguinte programa:</h3>
+
+        Crie uma imagem em HTML<br>
+        Logo, associe a imagem com uma função em JavaScript por meio de um evento onMouseOver<br>
+        Escreva uma descrição (fixa) para a mensagem por meio de um alert</p>
+        <p>
+            <img onMouseOver="legenda()" src="https://i.pinimg.com/564x/df/b0/a5/dfb0a5dcfc4d0673744651c00b4be6e5.jpg"> 
+        </p>
+</body>
+</html>

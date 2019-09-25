@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+
+    <style>
+        table{
+            border: "solid"
+        }
+    </style>
+    
+</head>
+<body>
+    <h1>Exercicios Manipulação DOM</h1>
+    <p>
+        1) Escreva um código em JS que consiga recuperar os valores dos atributos hreflang, rel e href do trecho de código abaixo
+    </p>
+
+    <p>
+        <a id="w3r" type="text/html" hreflang="en-us" rel="nofollow" target="_self" href="https://www.w3resource.com/">
+            w3resource
+        </a>
+    </p>
+
+    <button onclick="getAttributes()">Click here to get  attributes value</button>
+
+    <hr>
+
+    <p>2) Crie uma tabela em HTML com três linhas e três colunas. Cada vez que o usuário passar o mouse sobre uma célula, <br>
+        cor do fundo deve ser pintada de amarelo. Por sua vez, quando o usuário tirar o cursor de uma célula, <br>
+        a cor deve voltar ao estado original.</p>
+   
+
+        <table>
+            <tr>
+                <td>
+                    celula 01
+                </td>
+            </tr>
+        </table>
+    <hr>
+
+   <p>3) Desenvolva um formulário dinâmico utilizando DOM que simule uma tela de pagamento. <br>
+       O formulário deve conter um campo de selectonde o usuário escolhe um tipo de pagamento: 
+       <br>dinheiro, cheque ou cartão. <br>
+       Se o usuário selecionar a opção de dinheiro, <br>
+       somente um campo de inputpara o usuário preencher o valor deve ser apresentado. 
+       <br>Porém, se o usuário escolher cheque, os campos valor, número do cheque e data do vencimentos devem ser mostrados. 
+       <br>Finalmente, se o usuário escolher a opção de pagamento por meio de cartão, <br>
+       os campos de valor e código da operação devem ser apresentados</p>
+
+       <form>
+            <select id="frmPagamento" onchange="fSeleciona(this.value)">
+                <option value="">Opção de pagamento...</option>
+                <option value="dinheiro">Dinheiro</option>
+                <option value="cheque">Cheque</option>
+                <option value="cartao">Cartão</option>
+            </select>
+            <br>
+            <div id="camposPagamento">
+
+            </div>
+        </form>
+
+    <script src="script.js"></script>
+</body>
+</html>
