@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
-<body>
+<body onLoad="onload()">
     <h1>Exercicios</h1>
 
     <p>1. Implemente um programa em JavaScript que mostre 5 imagens randomicamente 
@@ -16,18 +16,33 @@
         <img id="imagensGigantes" src="">
     <hr>
 
-    <p>2. Desenvolva um formulário Web com dois campos (e-mail, senha) e um botão. Quando o usuário colocar o foco no campo e-mail a mensagem “Campo para você digitar um e-mail” deve aparacer na tela. Da mesma forma, quando o usuário colocar o foco no campo senha a mensagem “Campo para você digitar uma senha” deve ser apresentado para o usuário. Finalmente, quando o usuário pressionar o botão, os valores de e-mail e senha devem ser mostrados na tela por meio de um alert de Javascript.</p>
+    <p>2. Desenvolva um formulário Web com dois campos (e-mail, senha) e um botão. 
+        Quando o usuário colocar o foco no campo e-mail a mensagem “Campo para você digitar um e-mail” deve aparacer na tela. 
+        Da mesma forma, quando o usuário colocar o foco no campo senha a mensagem “Campo para você digitar uma senha” deve ser apresentado para o usuário. 
+        Finalmente, quando o usuário pressionar o botão, os valores de e-mail e senha devem ser mostrados na tela por meio de um alert de Javascript.</p>
     
     
-    <form >
-        <input type="email" id="email" placeholder="Digite seu e-mail" onfocus="mensagemEmail()">
-        <input type="password" id="senha" placeholder="Digite sua senha" onfocus="mensagemSenha()">
+    <form id="formulario">
+        <div id="mensagem"></div>
+        <input type="email" id="email" placeholder="Digite seu e-mail" onfocus="mensagemInput('email')">
+        <input type="password" id="senha" placeholder="Digite sua senha" onfocus="mensagemInput('senha')">
+        
     </form>
     <br>
-    <div id="mensagem">teste</div>
+    <button onclick="exeibirAlerta()">Confirmar</button>
+    
     <hr>
 
-    <p>3. Crie uma lista em HTML com quarenta nomes de pessoas, porém, apenas os dez primeiros nomes devem ser apresentados para os usuários. Entretanto, o sistema deve permitir que sejam visualizados e consequentemente escondidos mais nomes da lista por meio de dois botões. Uma vez pressionado, o primeiro botão deve sempre apresentar mais dez usuários até o limite máximo (40). Já o segundo botão deve esconder dez usuários até o limite mínimo (10).</p>
+    <p>3. Crie uma lista em HTML com quarenta nomes de pessoas, porém, apenas os dez primeiros nomes devem ser apresentados para os usuários. 
+        Entretanto, o sistema deve permitir que sejam visualizados e consequentemente escondidos mais nomes da lista por meio de dois botões. 
+        Uma vez pressionado, o primeiro botão deve sempre apresentar mais dez usuários até o limite máximo (40). 
+        Já o segundo botão deve esconder dez usuários até o limite mínimo (10).</p>
+
+    <ol id="listaNomes">
+        
+    </ol>
+    <button onclick="exibirMais()">Mais</button>
+    <button onclick="exibirMenos()">Menos</button>
 
     <script src="js/script.js"></script>
 </body>
