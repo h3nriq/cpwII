@@ -6,11 +6,11 @@
 */
 function alterarImg(){
     let imagens = ["img/01.jpg","img/02.jpg","img/03.jpg","img/04.jpg","img/05.jpg"];
-    let i = Math.floor(Math.random() * 4); 
+    let i = Math.floor(Math.random()* 5); 
+    console.log(i);
     let imagenExibida = imagens[i];
 
     let imgDOM = document.getElementById("imagensGigantes");
-    console.log(imgDOM);
 
     imgDOM.src = imagenExibida;
 }
@@ -57,7 +57,7 @@ function exeibirAlerta(){
 
     if (mensagem){
         alert(mensagem);
-        console.log(mensagem)
+
     }
 }
 
@@ -71,53 +71,57 @@ function exeibirAlerta(){
 var listaNomes = ["Alice","Miguel","Sophia","Arthur","Helena","Bernardo","Valentina","Heitor","Laura","Davi","Isabella","Lorenzo","Manuela","Théo","Júlia","Pedro","Heloísa","Gabriel","Luiza","Enzo","Maria Luiza","Matheus","Lorena","Lucas","Lívia","Benjamin","Giovanna","Nicolas","Maria Eduarda","Guilherme","Beatriz","Rafael","Maria Clara","Joaquim","Cecília","Samuel","Eloá","Enzo Gabriel","Lara","João Miguel"]
 
 var dezNomes = [];
+var l = 0;
 
-for(let x = 0; x < listaNomes.length; x+=10){
-    dezNomes.push(listaNomes.slice(x, x+10));
-}
-
-var min = 0;
-var max = 10;
-
+//função que gera 10 nomes no carregamento da pagina.
 function onload(){
+
+    //coloca no array dezNomes grupos de 10 em 10
+    for(let x = 0; x < listaNomes.length; x+=10){
+        dezNomes.push(listaNomes.slice(x, x+10));
+    }
+    
     let olDom = document.getElementById("listaNomes");
-    console.log("Min: " +  min + "\nMax: " + max);
-    for (min; min < max; min++){
+   
+    for (i = 0; i < 10; i++){
         var liDom = document.createElement("li");
-        liDom.innerHTML = listaNomes[min];
+        liDom.innerHTML = dezNomes[l][i];
         olDom.appendChild(liDom);
     }
-    max += 10; 
+    
+    l += 1
 }
 
+//função que gera de 10 em 10 nomes
 function  exibirMais(){
     let olDom = document.getElementById("listaNomes");
 
-    console.log("Min: " +  min + "\nMax: " + max);
-    if (max > 40 ){
-        alert("Maximo de nomes ja exibido")
+    if (olDom.children.length === 40){
+        alert("Maximo de 40 nomes em exibição atingido.")
     } else {
-        for (min; min < max; min++){
+        for (i = 0; i < 10; i++){
             let liDom = document.createElement("li");
-            liDom.innerHTML = listaNomes[min];
+            liDom.innerHTML = dezNomes[l][i];
             olDom.appendChild(liDom);
         }
-        max += 10;
+        
+        l += 1;
+
     }
 }
 
+//Função que ocu de 10 em 10 nomes
 function exibirMenos(){
-    console.log("Min: " +  min + "\nMax: " + max);
     let olDom = document.getElementById("listaNomes");
-    console.log(olDom)
-
-    if (min < 0 ){
-        alert("Não existem mais nomes para excluir.")
+    
+    if (olDom.children.length === 10 ){
+        alert("Exibição minima de 10 nomes atingida.")
     } else {
-        for (max; max > min; max--){
-            let liDom = olDom.childNodes;
-            olDom.removeChild(liDom[max]);
-            min-= 10;
+        for (i = 0; i < 10; i++){
+            olDom.removeChild(olDom.lastChild);
         }
+
+        l -= 1;
+        
     }
 }
